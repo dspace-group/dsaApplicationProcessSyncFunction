@@ -3,52 +3,50 @@
   <Systemidentification>
     <SystemType Name="SCALEXIO"/>
   </Systemidentification>
+
   <Classifications>
     <Classification Name="Application Process Sync" />
   </Classifications>
+
   <CustomFunctionBlock Name="Application Process Sync" Version="1" DistributorInformation="dSPACE GmbH">
-	  <PhysicalLayerInterfaces>
-		 <PhysicalLayerInterface Name="Physical Interface" Id="Layer1" >
-		    <Features />
-		 </PhysicalLayerInterface>
-	 </PhysicalLayerInterfaces>
+    <PhysicalLayerInterfaces>
+      <PhysicalLayerInterface Name="Physical Interface" Id="Layer1" >
+        <Features />
+      </PhysicalLayerInterface>
+    </PhysicalLayerInterfaces>
+    
     <ModelInterface>     
      <Functions>
         <Function Name="Trigger" Id="Fcn1" IsMultipleTriggerable="true">
          <DataPort Name="Send Trigger" Id="Fcn1_SendTrigger" Direction="In" DataType="UInt32" DefaultValue="0" Unit="" Width="1"/>
         </Function>
       </Functions>
-		
-		<EventPorts>
-			<EventPort Name="Event Port" Id="event0" EventIdentifier="0" EventType="SW" />
-		</EventPorts>
-	
-	<Parameters>
-		<Parameter DataType="UInt32" DefaultValue="100" Name="Key" Id="param1" Description="Key to identify the message queue"/>
-	</Parameters>
-    
-	</ModelInterface>
+    <EventPorts>
+      <EventPort Name="Event Port" Id="event0" EventIdentifier="0" EventType="SW" />
+    </EventPorts>
+    <Parameters>
+      <Parameter DataType="UInt32" DefaultValue="100" Name="Key" Id="param1" Description="Key to identify the message queue"/>
+    </Parameters>
+    </ModelInterface>
     <CModule Name="dsaApplProcSyncFcn">
-
-		<CFunction-Global Name="dsaApplProcSyncFcn_Create">
-		 <Caller AccessPoint="Creation"/>
-		</CFunction-Global>
-		<CFunction-Global Name="dsaApplProcSyncFcn_Init">
-			<Caller AccessPoint="Init"/>
-		</CFunction-Global>
-        <CFunction-Global Name="dsaApplProcSyncFcn_Stop">
+      <CFunction-Global Name="dsaApplProcSyncFcn_Create">
+        <Caller AccessPoint="Creation"/>
+      </CFunction-Global>
+      <CFunction-Global Name="dsaApplProcSyncFcn_Init">
+        <Caller AccessPoint="Init"/>
+      </CFunction-Global>
+      <CFunction-Global Name="dsaApplProcSyncFcn_Stop">
         <Caller AccessPoint="Stop"/>
       </CFunction-Global>
-	  <CFunction-Global Name="dsaApplProcSyncFcn_Unload">
+      <CFunction-Global Name="dsaApplProcSyncFcn_Unload">
         <Caller AccessPoint="Unload"/>
-		</CFunction-Global>
-		<CFunction-Global Name="dsaApplProcSyncFcn_Terminate">
+      </CFunction-Global>
+      <CFunction-Global Name="dsaApplProcSyncFcn_Terminate">
         <Caller AccessPoint="Terminate"/>
-		</CFunction-Global>
+      </CFunction-Global>
       <CFunction-DataPort Name="dsaApplProcSyncFcnTrigger">
         <Caller DataPortId="Fcn1_SendTrigger"/>
       </CFunction-DataPort>   
-     	
     </CModule>
     <MakeConfiguration>
       <Artefact Name="dsinterruptdrv" Type="Library" />
