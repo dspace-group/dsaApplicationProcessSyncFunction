@@ -19,7 +19,7 @@ With a right click in the Tab **Functions** of ConfigurationDesk, select "Reload
 2. With a right click on the <i>Application Process Sync</i>  create a new instance of the function by selecting "New" (1). In the **Model-Function** View of ConfigurationDesk drag the unconnected function instance on
 the Simulink Model in the **Model-Function Mapping** Tab (2). With a right click on the instance function (Application Process Sync (1)) select Propagade to Simulink Model (3).
 
-   ![image](https://github.com/alinamamulat/IPC_Event/assets/163404282/f8e6b56c-b07b-4aac-97b7-c7c55e534b65) -> ![image](https://github.com/alinamamulat/IPC_Event/assets/163404282/d8c9a889-7b45-4186-b9a9-7785d1278f4a) -> ![image](https://github.com/alinamamulat/IPC_Event/assets/163404282/67fb0c60-54a3-4fd4-902f-9ef26065a382)
+![image](https://github.com/alinamamulat/IPC_Event/assets/163404282/f8e6b56c-b07b-4aac-97b7-c7c55e534b65)->![image](https://github.com/alinamamulat/IPC_Event/assets/163404282/d8c9a889-7b45-4186-b9a9-7785d1278f4a)->![image](https://github.com/alinamamulat/IPC_Event/assets/163404282/67fb0c60-54a3-4fd4-902f-9ef26065a382)
 
 Note: For each Model that needs to be syncronised, two instances should be created. One instance should be dragged and dropped into the Simulink Model that controls the syncronisation process and the second instance in the Model that shall be syncronised. 
 
